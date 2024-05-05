@@ -20,3 +20,24 @@ createPromise(10000) // returb pr1 {value: undefined, state: pending, onFulfille
     console.log("Value in third then", value);
     return value*2;
 }); //return pr4 {value: undefined, state: pending, onFulfilled: [h], onRejected: []}
+
+/**
+ the above code and below code is identical
+
+ const pr1 = createPromise(10000);
+ const pr2 = pr1.then(function f(value) {
+    console.log("Value in first then", value);
+    return value*2;
+ });
+
+ const pr3 = pr2.then(function g(value) {
+    console.log("Value in second then", value);
+    return value*2;
+ });
+ 
+ const pr4 = pr3.then(function h(value) {
+    console.log("Value in third then", value);
+    return value*2;
+ }); 
+
+ */
