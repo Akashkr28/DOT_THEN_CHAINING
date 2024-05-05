@@ -6,6 +6,11 @@ function createPromise(time){
     });
 }
 
+const resolver = (val) => {
+    console.log("Resolving with", val);
+    return 20
+};
+const rejector = (val) => console.log("Rejecting with", val);
 
 const pr1 = createPromise(10000); //first Promise Object
 console.log("PR1", pr1);
