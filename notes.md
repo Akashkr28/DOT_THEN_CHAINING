@@ -1,0 +1,3 @@
+EXCEPION IN PROGRAMMING - It is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instruction.
+"throw" statement is one of the exception which is a user-defined exception.
+If "pr1" rejects "do you have a rejection handler" if "yes" then "pr2 fulfills" BUT if "NO" --> To handle case of promise chaining where "rejection handler" is missing we can use ".catch function" or in simple term if we have ".catch function" if yes --> then it will got handled and if "NOT" --> exception terminates program

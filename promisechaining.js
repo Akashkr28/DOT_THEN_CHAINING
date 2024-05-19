@@ -6,26 +6,46 @@ function createPromise(time){
     });
 }
 
+/** METHOD - 1*/
 
-createPromise(10000) // return pr1 {value: undefined, state: pending, onFulfilled: [f], onRejected: []}
+createPromise(10000) 
 .then((value) => {
     console.log("Value in first then", value);
     return value*2;
-}) //return pr2 {value: undefined, state: pending, onFulfilled: [g], onRejected: []}
+}) 
 .then((value) => {
     console.log("Value in second then", value);
     return value*2;
-}) //return pr3 {value: undefined, state: pending, onFulfilled: [h], onRejected: []}
+}) 
 .then((value) => {
     console.log("Value in third then", value);
     return value*2;
-}) //return pr4 {value: undefined, state: pending, onFulfilled: [h], onRejected: []}
+}) 
 .then((value) => {
     console.log("Value in third then", value);
     return value*2;
 });
 
-//  the above code and below code is identical
+/** METHOD - 2 */
+
+createPromise(1000) // return pr1 {value: undefined, state: pending, onFulfilled: [f], onRejected: []}
+.then(function f(value) {
+    console.log("Value in first then", value);
+    return value*2;
+}) //return pr2 {value: undefined, state: pending, onFulfilled: [g], onRejected: []}
+.then(function g(value) {
+    console.log("Value in second then", value);
+    return value*2;
+}) //return pr3 {value: undefined, state: pending, onFulfilled: [h], onRejected: []}
+.then(function g(value) {
+    console.log("Value in second then", value);
+    return value*2;
+}) //return pr4 {value: undefined, state: pending, onFulfilled: [h], onRejected: []}
+
+
+/** METHOD - 3 */
+
+//  the above codes and below code is identical
 
  const pr1 = createPromise(10000);
  const pr2 = pr1.then(function f(value) {
