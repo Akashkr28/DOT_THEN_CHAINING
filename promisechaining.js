@@ -7,7 +7,7 @@ function createPromise(time){
 }
 
 
-createPromise(10000) // returb pr1 {value: undefined, state: pending, onFulfilled: [f], onRejected: []}
+createPromise(10000) // return pr1 {value: undefined, state: pending, onFulfilled: [f], onRejected: []}
 .then((value) => {
     console.log("Value in first then", value);
     return value*2;
